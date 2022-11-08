@@ -2,17 +2,24 @@
 function fizzbuzz() {
     // Iterate from 1 to 100
     for (let i = 1; i < 101; i++) {
-        if (i % 15 == 0) {
-            // Case where number is multiple of 3 and 5
-            console.log("fizzbuzz")
-        } else if (i % 3 == 0) {
-            // Case where number is multiple of 3
-            console.log("fizz")
-        } else if (i % 5 == 0) {
-            // Case where number is multiple of 5
-            console.log("buzz")
-        } else
-        console.log(i);
+        let answer = "";
+        // Check if number is an identified multiple
+        if (i % 3 == 0) {
+            // Case where number is a multiple of 3
+            answer = answer.concat("fizz");
+        }
+        if (i % 5 == 0) {
+            // Case where number is a multiple of 5
+            answer = answer.concat("buzz");
+        }
+        // Print number or phrase
+        if (answer.length > 0) {
+            // Case where number is a multiple
+            console.log(answer);
+        } else {
+            // Case where number is not an identified multiple
+            console.log(i);
+        }
     }
 
 }
