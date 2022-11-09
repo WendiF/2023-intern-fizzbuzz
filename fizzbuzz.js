@@ -6,12 +6,17 @@ function fizzbuzz() {
         // Check if number is an identified multiple
         if (i % 3 == 0) {
             // Case where number is a multiple of 3
-            answer = answer.concat("fizz");
+            answer = answer.concat("Fizz");
         }
         if (i % 5 == 0) {
             // Case where number is a multiple of 5
-            answer = answer.concat("buzz");
+            answer = answer.concat("Buzz");
         }
+        if (i % 7 == 0) {
+            // Case where number is a multiple of 7
+            answer = answer.concat("Bang");
+        }
+
         // Print number or phrase
         if (answer.length > 0) {
             // Case where number is a multiple
