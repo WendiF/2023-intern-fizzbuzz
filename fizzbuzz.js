@@ -17,9 +17,9 @@ function fizzbuzz() {
 
 }
 
-function fizzbuzz2() {
+function fizzbuzz2(num) {
 
-    for (let i = 1; i <= 260; i++) {
+    for (let i = 1; i <= num; i++) {
 
         console.log(getOutput(i))
     }
@@ -76,5 +76,24 @@ function getOutput(i) {
 }
 
 // Now, we run the main function:
-fizzbuzz2();
+
+const readline = require('readline').createInterface({
+    input: process.stdin,
+    output: process.stdout
+});
+
+readline.question('Please enter a maximum number: ', num => {
+
+    if (isNaN(num)) {
+        console.log("That is not a number!");
+
+    } else {
+        fizzbuzz2(Number(num));
+    }
+
+    readline.close();
+
+});
+
+
 
