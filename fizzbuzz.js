@@ -12,12 +12,10 @@ function fizzbuzz() {
             answer = further_multiples(i, answer);
         }
 
-        // Turn array to combined string
-        answer = answer.join('');
         // Print number or phrase
         if (answer.length > 0) {
             // Case where number is a multiple
-            console.log(answer);
+            console.log(answer.join(''));
         } else {
             // Case where number is not an identified multiple
             console.log(i);
