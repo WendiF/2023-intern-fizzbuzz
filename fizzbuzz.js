@@ -9,27 +9,14 @@ function fizzbuzz() {
             answer.push("Bong");
         } else {
             // Append strings for numbers that are identified multiples
-            answer = further_multiples(i, answer);
+            answer = add_phrase(i, answer, 3, "Fizz");
+            answer = add_phrase(i, answer, 5, "Buzz");
+            answer = add_phrase(i, answer, 7, "Bang");
         }
 
-        if (i % 13 ==0) {
-            // Case where number is a multiple of 13
-            // Insert string before first "B" string
-            let position = 0;
-            for (let j = 0; j < answer.length; j++) {
-                if (answer[j][0] == "B") {
-                    position = j;
-                    break;
-                }
-            }
-            answer.splice(position, 0, "Fezz");
-        }
-
-        if (i % 17 ==0) {
-            // Case where number is a multiple of 17
-            // Reverse order of array
-            answer.reverse();
-        }
+        // Check further multiples
+        answer = insert(i, answer, 13, "Fezz", "B");
+        answer = reverse_phrase(i, answer, 17);
 
         // Print number or phrase
         if (answer.length > 0) {
@@ -42,19 +29,38 @@ function fizzbuzz() {
     }
 }
 
-// Function to check for multiples whose associated strings can be appended
-function further_multiples(i, answer) {
-    if (i % 3 == 0) {
-        // Case where number is a multiple of 3
-        answer.push("Fizz");
+// Function to check for multiple
+// Appends string to array
+function add_phrase(i, answer, n, phrase) {
+    if (i % n == 0) {
+        answer.push(phrase);
     }
-    if (i % 5 == 0) {
-        // Case where number is a multiple of 5
-        answer.push("Buzz");
+    return answer
+}
+
+// Function to check for multiple
+// Inserts string before first flag_letter
+function insert(i, answer, n, phrase, flag_letter) {
+    if (i % n == 0) {
+        // Case where number is a multiple of 13
+        // Insert string before first "B" string
+        let position = 0;
+        for (let j = 0; j < answer.length; j++) {
+            if (answer[j][0] == flag_letter) {
+                position = j;
+                break;
+            }
+        }
+        answer.splice(position, 0, phrase);
     }
-    if (i % 7 == 0) {
-        // Case where number is a multiple of 7
-        answer.push("Bang");
+    return answer
+}
+
+// Function to check for multiple
+// Reverses order of array
+function reverse_phrase(i, answer, n) {
+    if (i % n == 0) {
+        answer.reverse();
     }
     return answer
 }
