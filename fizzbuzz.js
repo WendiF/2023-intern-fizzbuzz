@@ -1,10 +1,16 @@
 // This is our main function
 function fizzbuzz() {
-    // Iterate from 1 to 100
-    for (let i = 1; i < 101; i++) {
+    // Iterate from 1 to 121
+    for (let i = 1; i < 121; i++) {
         let answer = "";
-        // Append strings for numbers that are identified multiples
-        answer = further_multiples(i, answer);
+        if (i % 11 == 0) {
+            // Case where number is a multiple of 11
+            answer = answer.concat("Bong");
+        } else {
+            // Append strings for numbers that are identified multiples
+            answer = further_multiples(i, answer);
+        }
+
         // Print number or phrase
         if (answer.length > 0) {
             // Case where number is a multiple
