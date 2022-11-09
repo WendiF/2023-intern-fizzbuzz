@@ -2,15 +2,18 @@
 function fizzbuzz() {
     // Iterate from 1 to 121
     for (let i = 1; i < 121; i++) {
-        let answer = "";
+        // Initialise array
+        let answer = [];
         if (i % 11 == 0) {
             // Case where number is a multiple of 11
-            answer = answer.concat("Bong");
+            answer.push("Bong");
         } else {
             // Append strings for numbers that are identified multiples
             answer = further_multiples(i, answer);
         }
 
+        // Turn array to combined string
+        answer = answer.join('');
         // Print number or phrase
         if (answer.length > 0) {
             // Case where number is a multiple
@@ -26,15 +29,15 @@ function fizzbuzz() {
 function further_multiples(i, answer) {
     if (i % 3 == 0) {
         // Case where number is a multiple of 3
-        answer = answer.concat("Fizz");
+        answer.push("Fizz");
     }
     if (i % 5 == 0) {
         // Case where number is a multiple of 5
-        answer = answer.concat("Buzz");
+        answer.push("Buzz");
     }
     if (i % 7 == 0) {
         // Case where number is a multiple of 7
-        answer = answer.concat("Bang");
+        answer.push("Bang");
     }
     return answer
 }
