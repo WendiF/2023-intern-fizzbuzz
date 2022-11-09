@@ -1,17 +1,14 @@
 // This is our main function
 function fizzbuzz() {
 
-    for (let i = 1 ; i <= 100 ; i++)
-    {
+    for (let i = 1; i <= 100; i++) {
         output = "";
 
-        if (i % 3 === 0)
-        {
+        if (i % 3 === 0) {
             output = "Fizz";
         }
 
-        if (i % 5 === 0)
-        {
+        if (i % 5 === 0) {
             output += "Buzz";
         }
 
@@ -30,11 +27,9 @@ function fizzbuzz2() {
 }
 
 
-function getOutput(i)
-{
+function getOutput(i) {
     output = "";
-    if (i % 11 === 0)
-    {
+    if (i % 11 === 0) {
         output = "Bong";
     } else {
 
@@ -52,28 +47,23 @@ function getOutput(i)
 
     }
 
-    if (i % 13 === 0)
-    {
+    if (i % 13 === 0) {
         // Find first B
         splitArr = output.split("B", 2)
 
         output = splitArr[0] + "Fezz";
 
-        if (splitArr.length > 1)
-        {
+        if (splitArr.length > 1) {
             output += "B" + splitArr[1];
         }
     }
 
-    if (i % 17 === 0)
-    {
+    if (i % 17 === 0) {
         // Separate words by their capital letters
         words = output.split(/(?=[A-Z])/)
-        if (words.length !== 0 && words[0] !== "")
-        {
+        if (words.length !== 0 && words[0] !== "") {
             output = "";
-            for (let j = words.length - 1 ; j >= 0 ; j--)
-            {
+            for (let j = words.length - 1; j >= 0; j--) {
                 output += words[j];
             }
         }
@@ -84,6 +74,7 @@ function getOutput(i)
 
 
 }
+
 // Now, we run the main function:
 fizzbuzz2();
 
