@@ -1,7 +1,7 @@
 // This is our main function
 function fizzbuzz() {
-    // Iterate from 1 to 121
-    for (let i = 1; i < 121; i++) {
+    // Iterate from 1 to 255
+    for (let i = 1; i < 256; i++) {
         // Initialise array
         let answer = [];
         if (i % 11 == 0) {
@@ -10,6 +10,25 @@ function fizzbuzz() {
         } else {
             // Append strings for numbers that are identified multiples
             answer = further_multiples(i, answer);
+        }
+
+        if (i % 13 ==0) {
+            // Case where number is a multiple of 13
+            // Insert string before first "B" string
+            let position = 0;
+            for (let j = 0; j < answer.length; j++) {
+                if (answer[j][0] == "B") {
+                    position = j;
+                    break;
+                }
+            }
+            answer.splice(position, 0, "Fezz");
+        }
+
+        if (i % 17 ==0) {
+            // Case where number is a multiple of 17
+            // Reverse order of array
+            answer.reverse();
         }
 
         // Print number or phrase
