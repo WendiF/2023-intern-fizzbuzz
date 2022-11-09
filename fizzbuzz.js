@@ -32,25 +32,24 @@ function fizzbuzz2() {
 
 function getOutput(i)
 {
-
+    output = "";
     if (i % 11 === 0)
     {
-        return "Bong";
+        output = "Bong";
+    } else {
 
-    }
+        if (i % 3 === 0) {
+            output = "Fizz";
+        }
 
-    output = "";
+        if (i % 5 === 0) {
+            output += "Buzz";
+        }
 
-    if (i % 3 === 0) {
-        output = "Fizz";
-    }
+        if (i % 7 === 0) {
+            output += "Bang";
+        }
 
-    if (i % 5 === 0) {
-        output += "Buzz";
-    }
-
-    if (i % 7 === 0) {
-        output += "Bang";
     }
 
     if (i % 13 === 0)
